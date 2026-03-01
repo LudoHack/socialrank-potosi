@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.db
+.env
+
+# Node
+frontend/node_modules/
+
+# Otros
+*.xlsx
+*.zip
+INICIO_RAPIDO.md
