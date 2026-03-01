@@ -1,6 +1,6 @@
 """
 Servicio de IA usando Google Gemini Flash (GRATIS).
-Modelo: gemini-2.0-flash
+Modelo: gemini-2.5-flash
 API key gratuita en: https://aistudio.google.com/apikey
 """
 import json
@@ -15,7 +15,7 @@ def _call_gemini(prompt: str) -> dict:
     try:
         client = genai.Client(api_key=settings.gemini_api_key)
         resp = client.models.generate_content(
-            model="models/gemini-2.0-flash",
+            model="models/gemini-2.5-flash",
             contents=prompt,
             config=types.GenerateContentConfig(
                 temperature=0.4,
