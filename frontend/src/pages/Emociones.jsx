@@ -55,9 +55,10 @@ export default function Emociones() {
           {radar.some(r => r.valor > 0) ? (
             <ResponsiveContainer width="100%" height={240}>
               <RadarChart data={radar}>
-                <PolarGrid stroke="var(--border)" />
-                <PolarAngleAxis dataKey="tipo" tick={{ fill: 'var(--muted)', fontSize: 12 }} />
-                <Radar dataKey="valor" stroke="var(--accent)" fill="var(--accent)" fillOpacity={0.35} />
+                <PolarGrid stroke="#3a3f5c" />
+                <PolarAngleAxis dataKey="tipo" tick={{ fill: '#8b92b8', fontSize: 12 }} />
+                <Radar dataKey="valor" stroke="#a78bfa" fill="#a78bfa" fillOpacity={0.45}
+                  dot={{ fill: '#a78bfa', r: 4 }} />
                 <Tooltip contentStyle={{ background: '#1a1d27', border: '1px solid #3a3f5c', borderRadius: 8 }} labelStyle={{ color: '#e8eaf6', fontWeight: 600 }} itemStyle={{ color: '#c8cde8' }} />
               </RadarChart>
             </ResponsiveContainer>
@@ -68,13 +69,13 @@ export default function Emociones() {
           <div className="card-title">Intensidades actuales</div>
           {radar.some(r => r.valor > 0) ? (
             <ResponsiveContainer width="100%" height={240}>
-              <BarChart data={radar} layout="vertical" margin={{ left: 10 }}>
-                <CartesianGrid horizontal={false} stroke="var(--border)" />
-                <XAxis type="number" domain={[0, 10]} tick={{ fill: 'var(--muted)', fontSize: 11 }} />
-                <YAxis type="category" dataKey="tipo" tick={{ fill: 'var(--text)', fontSize: 11 }} width={90} />
+              <BarChart data={radar} layout="vertical" margin={{ left: 0, right: 20, top: 5, bottom: 5 }}>
+                <CartesianGrid horizontal={false} stroke="#3a3f5c" />
+                <XAxis type="number" domain={[0, 10]} tick={{ fill: '#8b92b8', fontSize: 11 }} />
+                <YAxis type="category" dataKey="tipo" tick={{ fill: '#e8eaf6', fontSize: 11 }} width={95} />
                 <Tooltip contentStyle={{ background: '#1a1d27', border: '1px solid #3a3f5c', borderRadius: 8 }} labelStyle={{ color: '#e8eaf6', fontWeight: 600 }} itemStyle={{ color: '#c8cde8' }} />
-                <Bar dataKey="valor" radius={[0, 4, 4, 0]}>
-                  {radar.map((r, i) => <Cell key={i} fill={COLORS[r.tipo] || 'var(--accent)'} />)}
+                <Bar dataKey="valor" radius={[0, 4, 4, 0]} barSize={18}>
+                  {radar.map((r, i) => <Cell key={i} fill={COLORS[r.tipo] || '#a78bfa'} />)}
                 </Bar>
               </BarChart>
             </ResponsiveContainer>

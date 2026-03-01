@@ -1,8 +1,8 @@
 # ── Stage 1: Build frontend ──────────────────────────────────────────────
 FROM node:20-slim AS frontend-builder
 
-# cache-bust: 20260301-potosi-v1
-ARG CACHEBUST=20260301-potosi-v1
+# cache-bust: 20260301-potosi-v2
+ARG CACHEBUST=20260301-potosi-v2
 
 WORKDIR /frontend
 COPY frontend/package*.json ./
